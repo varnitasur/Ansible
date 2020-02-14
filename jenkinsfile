@@ -15,7 +15,7 @@ node {
   def project_ansible="ansible"
   dir(project_ansible) { 
   stage('Prod Deployment on AWS'){
-  sh label: 'terraform', script: 'ansible-playbook -i /root/.jenkins/workspace/Terraform/Terrform/jenkins-ci.ini -u ubuntu --key /root/.ssh/newkey.pem web-playbook.yaml'
+  sh label: 'terraform', script: 'ansible-playbook -i /../../Terraform/Terrform/jenkins-ci.ini -u ubuntu --key /root/.ssh/newkey.pem web-playbook.yaml'
      } 
    }
 }
