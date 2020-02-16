@@ -1,6 +1,6 @@
 node {
  stage('Git-Checkout for ansible') {
-   git 'https://github.com/NiharSibu/Ansible1.git'
+   git 'https://github.com/Aaditigupta/Ansible1.git'
   }
   stage('Geting Ready For Ansible') {
     def server= Artifactory.server 'Artifactory'
@@ -15,7 +15,7 @@ node {
   def project_ansible="ansible"
   dir(project_ansible) { 
   stage('Prod Deployment on AWS'){
-  sh label: 'terraform', script: 'ansible-playbook -i /root/.jenkins/workspace/Terraform/Terrform/jenkins-ci.ini -u ubuntu --key /root/.ssh/newkey.pem web-playbook.yaml'
+  sh label: 'terraform', script: 'ansible-playbook -i /root/.jenkins/workspace/Terraform/Terrform/jenkins-ci.ini -u ubuntu --key /root/.ssh/aditikey.pem web-playbook.yaml'
      } 
    }
 }
