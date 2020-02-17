@@ -15,7 +15,6 @@ node {
  stage ('Input'){
 	input "Deploy to production server ?"
 	}
- }
   def project_ansible="ansible"
   dir(project_ansible) { 
   stage('Prod Deployment on AWS'){
