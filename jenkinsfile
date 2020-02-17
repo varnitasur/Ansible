@@ -12,6 +12,10 @@ node {
     server.download(downloadSpec)  
   sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ansible/templates/app/index.html"
  }
+ stage ('Input'){
+	input "Deploy to production server ?"
+	}
+ }
   def project_ansible="ansible"
   dir(project_ansible) { 
   stage('Prod Deployment on AWS'){
